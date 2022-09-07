@@ -16,8 +16,9 @@ func main() {
 
 	var username string
 	var userTickets int
+	var totalUsers int = 0
 
-	// var bookings [50]string
+	var bookings [50]string
 
 	//  Pointer --> &
 	fmt.Println("Enter your name:-")
@@ -25,8 +26,12 @@ func main() {
 	fmt.Println("Enter the tickets you want to book:-")
 	fmt.Scan(&userTickets)
 
+	bookings[totalUsers] = username
+	totalUsers = totalUsers + 1
+
 	remainingTickets = remainingTickets - userTickets
 
-	fmt.Printf("User %v booked %v tickets", username, userTickets)
-	fmt.Printf("We have %v tickets left", remainingTickets)
+	fmt.Printf("User %v booked %v tickets\n", username, userTickets)
+	fmt.Printf("We have %v tickets left\n", remainingTickets)
+	fmt.Printf("length of array:- %v", len(bookings))
 }
